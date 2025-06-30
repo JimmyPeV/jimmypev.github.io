@@ -2,9 +2,9 @@
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
-const arts = (await getCollection("arts"))//.sort(
-//   (a, b) => b.data.date.getTime() - a.data.date.getTime()
-// )
+const arts = (await getCollection("arts")).sort(
+   (a, b) => b.data.date.getTime() - a.data.date.getTime()
+ )
 ---
 
 <section id="ArtStationPortfolio" aria-label="ArtStation portfolio">
