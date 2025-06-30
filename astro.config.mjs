@@ -8,8 +8,5 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  experimental: {
-    svg: true
-  },
   site: 'http://jimmypev.github.io'
 });
