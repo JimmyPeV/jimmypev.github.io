@@ -11,5 +11,5 @@ export default defineConfig({
   experimental: {
     svg: true
   },
-  site: 'https://jimmypev.github.io'
+  site: 'http://jimmypev.github.io'
 });
