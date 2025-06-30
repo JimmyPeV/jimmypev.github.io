@@ -1,0 +1,72 @@
+---
+import { ClientRouter } from 'astro:transitions';
+
+import '/src/styles/global.css'
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
+interface Props {
+	title?: string;
+	mainClass?: string;
+}
+
+const {
+	title = "Jaime Pérez - 3D Portfolio",
+	mainClass = ""
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>
+			{title}
+		</title>
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+		<meta
+			name="description" 
+			content="JimmyPV's full 3D portofolio. 3D assets, mods, etc."
+		/>
+
+		<meta property="og:url" content="https://jimmypv.github.io" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="JimmyPV 3D Portfolio" />
+		<meta
+			property="og:description"
+			content="JimmyPV's full 3D portofolio. 3D assets, mods, etc."
+		/>
+		<meta property="og:img" content="https://jimmypv.github.io/og.jpg" />
+		<meta property="og:locale" content="en_US" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@jimmypv.github.io" />
+		<meta name="twitter:creator" content="@JimmyPV" />
+		<meta name="twitter:title" content="JimmyPV 3D Portfolio" />
+		<meta
+			name="twitter:description"
+			content="JimmyPV's full 3D portofolio. 3D assets, mods, etc."
+		/>
+		
+		<ClientRouter />
+	</head>
+	<body>
+		<Header />
+		<main class={`flex-grow bg-background ${mainClass}`}>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	body {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+</style>

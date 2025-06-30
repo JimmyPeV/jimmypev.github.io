@@ -1,0 +1,119 @@
+---
+import Image from "astro/components/Image.astro";
+import Abilities from "../components/Abilities.astro";
+import TemporalLine from "../components/TemporalLine.astro";
+import TemporalLineElement from "../components/TemporalLineElement.astro";
+import Layout from "../layouts/Layout.astro";
+
+import JaimePerez from "../assets/about-me.webp";
+---
+
+<Layout title="About Me - Jaime Pérez">
+    <section class="flex flex-col gap-15 m-15">
+        <div class="grid md:grid-cols-2 mx-10 gap-12">
+            <Image
+                loading={"eager"}
+                src={JaimePerez}
+                alt="Jaime Pérez profile"
+                class="w-95 place-self-center"
+            />
+
+            <div class="flex flex-col gap-4">
+                <h2
+                    class="text-2xl text-text-secondary font-bold underline decoration-skin"
+                >
+                    Short biography
+                </h2>
+
+                <p class="text-text-secondary">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Pariatur quidem unde nihil itaque cumque tempore totam.
+                    Adipisci autem laborum ea, beatae, corrupti eius tempora, laudantium rerum libero fugit consequuntur eaque!
+                </p>
+
+                <p class="text-text-secondary">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Pariatur quidem unde nihil itaque cumque tempore totam.
+                    Adipisci autem laborum ea, beatae, corrupti eius tempora, laudantium rerum libero fugit consequuntur eaque!
+                </p>
+
+                <p class="text-text-secondary">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Pariatur quidem unde nihil itaque cumque tempore totam.
+                    Adipisci autem laborum ea, beatae, corrupti eius tempora, laudantium rerum libero fugit consequuntur eaque!
+                </p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-1 mx-10 gap-12">
+            <Abilities />
+        </div>
+
+        <div class="grid md:grid-cols-2 mx-10 gap-12">
+            <div>
+                <h2
+                    class="text-2xl font-bold mb-2 text-text-secondary"
+                >
+                    Work Experience
+                </h2>
+                <TemporalLine>
+                    <TemporalLineElement
+                        title="3D Modeler"
+                        subtitle="at JPOSERVIARQ, Valencia"
+                        initialYear={2024}
+                    />
+                    <TemporalLineElement
+                        title="Visual Effects Artist"
+                        subtitle="at Towards Stars, Valencia"
+                        initialYear={2024}
+                        isLastElement={true}
+                    />
+                </TemporalLine>
+            </div>
+
+            <div>
+                <h2
+                    class="text-2xl font-bold mb-2 text-text-secondary"
+                >
+                    Courses
+                </h2>
+                <TemporalLine>
+                    <TemporalLineElement
+                        title="Concept Art for Games N’ Movies"
+                        subtitle=" ArtStation"
+                        initialYear={2025}
+                    />
+                    <TemporalLineElement
+                        title="Blender/Substance Painter"
+                        subtitle="Udemy"
+                        initialYear={2024}
+                    />
+                    <TemporalLineElement
+                        title="Blender Anime Character Creator: Make 3D Anime Characters in Blender"
+                        subtitle="Grant Abbitt"
+                        initialYear={2024}
+                    />
+                    <TemporalLineElement
+                        title="Complete Blender Creator 3: Learn 3D Modelling for Beginners"
+                        subtitle="Grant Abbitt"
+                        initialYear={2024}
+                    />
+                    <TemporalLineElement
+                        title="The Unity Shaders Bible"
+                        subtitle="Jettelly"
+                        initialYear={2023}
+                    />
+                    <TemporalLineElement
+                        title="Character Sculpting Blender"
+                        subtitle="Udemy"
+                        initialYear={2021}
+                        isLastElement={true}
+                    />
+                </TemporalLine>
+            </div>
+
+
+        </div>
+
+    </section>
+</Layout>

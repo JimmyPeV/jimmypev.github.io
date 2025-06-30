@@ -1,0 +1,31 @@
+---
+interface Props {
+    title: string;
+    subtitle: string;
+    initialYear: number;
+    finalYear?: number;
+    isLastElement?: boolean;
+}
+
+const { title, subtitle, initialYear, finalYear, isLastElement = false } = Astro.props;
+---
+
+<div class="relative pl-10 overflow-visible">
+    <div class={`absolute top-2 ${isLastElement ? 'bottom-0' : 'bottom-[-1.5rem]'} last:bottom-0 flex items-start`}>
+        <div class="absolute -left-2 top-0 w-4 h-4 bg-skin rounded-full"></div>
+        <div class="w-px bg-skin h-full"></div>
+    </div>
+
+    <div class="ml-4">
+        <span class="text-lg font-bold text-text-tertiary">
+            {initialYear}
+            <!-- -{finalYear ? finalYear : "Present"} -->
+        </span>
+        <h1 class="text-2xl font-bold text-text-primary">
+            {title}
+        </h1>
+        <h2 class="text-xl font-bold text-text-secondary">
+            {subtitle}
+        </h2>
+    </div>
+</div>

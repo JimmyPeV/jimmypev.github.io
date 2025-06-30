@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro"
+
+const ICON_COPY = `<i class="fa-solid fa-copy"></i>`
+---
+
+<Layout title="Contact - Jaime Pérez">
+  <section>
+    <div class="flex flex-col gap-y-4 items-start justify-center mx-24 my-14">
+      <h1 class="text-7xl font-extrabold text-center text-text-primary">
+        Contact
+      </h1>
+      <p class="text-2xl font-bold text-start pl-1 opacity-70 max-w-6/8 text-text-tertiary">
+        I'm always happy to connect — whether it's for a new project, a collaboration, or just to chat.
+        <br>
+        Feel free to drop me a message!
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-y-4 items-start justify-center mx-24 mb-16">
+      <h2 class="text-6xl font-bold text-center text-text-primary">
+        Email
+      </h2>
+      <div class="fex flex-row gap-x-4 items-center justify-center pl-1 text-xl text-text-tertiary">
+        <span id="mail">
+          jaime.pvillena@gmail.com
+        </span>
+        <button
+            id="copyMailBtn"
+            class="text-text-tertiary transition hover:text-text-secondary hover:cursor-pointer"
+            aria-label="Copy email"
+            data-icon-copy={ICON_COPY}
+            set:html={ICON_COPY}
+        />
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script type="module">
+    const button = document.getElementById("copyMailBtn")
+    const mailElement = document.getElementById("mail")
+  
+    if (button && mailElement) {
+      const loadingTime = 500
+      const backToIconTime = 1500 // minus loadingTime
+
+      button.addEventListener("click", () => {
+        const mailToCopy = mailElement.textContent ?? ""
+        button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+        
+        navigator.clipboard
+          .writeText(mailToCopy)
+          .then(() => {
+            setTimeout(() => {  // false loading
+              button.innerHTML = '<i class="fa-solid fa-check"></i>'
+            }, loadingTime)
+          })
+          .catch((error) => {
+            setTimeout(() => {  // false loading
+              button.innerHTML = 'X'
+              console.error("Error copying email:", error)
+              alert("It couldn't be copied. You can manually select and copy it.")
+            }, loadingTime)
+          })
+          .finally(() => {
+            setTimeout(() => {
+              button.innerHTML = button.dataset.iconCopy
+            }, backToIconTime)
+        })
+      })
+    }
+  </script>
+  

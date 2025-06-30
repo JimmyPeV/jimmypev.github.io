@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+    --color-prussian-blue: #003049;
+    --color-indigo-dye: #00527C;
+    --color-honolulu-blue: #0073AF;
+    --color-orange-wheel: #F77F00;
+    --color-xanthous: #FCBF49;
+    --color-vanilla: #EAE2B7;
+
+    --color-skin: var(--color-xanthous);
+
+    --color-background: var(--color-vanilla);
+    /* --color-background: #dcdad5; */
+    
+    --color-text-primary: var(--color-prussian-blue);
+    --color-text-secondary: var(--color-indigo-dye);
+    --color-text-tertiary: var(--color-honolulu-blue);
+
+    --color-headerfooter-bg: var(--color-prussian-blue);
+    --color-headerfooter-text: var(--color-xanthous);
+    --color-headerfooter-text-secondary: var(--color-vanilla);
+}

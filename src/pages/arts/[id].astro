@@ -1,0 +1,61 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import ArtStation from "../../assets/svg/artstation.svg";
+
+export async function getStaticPaths() {
+    const arts = await getCollection("arts");
+
+    return arts.map(art => ({
+        params: { id: art.slug },
+        props: { art },
+    }))
+}
+
+const { art } = Astro.props
+const { data, slug } = art
+const { title, date, img, artstation } = data
+
+const { Content } = await render(art)
+---
+
+<Layout title={`${title} - JimmyPV Art`} mainClass="content-center">
+    <div class="flex h-full gap-12 justify-center mt-5 mb-3">
+        <aside class="flex flex-col gap-2">
+            <Image
+                loading={"eager"}
+                transition:name={`img-${slug}`}
+                class="mb-3 w-96 rounded"
+                src={img}
+                alt={title}
+            />
+            <a
+                href={artstation}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="See it in ArtStation"
+                class="text-balance inline-flex gap-2 justify-center items-center text-center py-2 rounded-lg
+                    bg-[#171717] text-white
+                transition hover:scale-110"
+            >
+                See more in ArtStation
+                <ArtStation class="text-[#13aff0]" />
+            </a>
+            <a href="/my-work" class="text-text-tertiary hover:underline opacity-70">← Back</a>
+        </aside>
+        
+        <div class="max-w-xl">
+            <h1 class="text-4xl font-bold mb-4 text-text-secondary">{title}</h1>
+            <div class="prose text-text-tertiary">
+                <Content />
+            </div>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    main {
+        align-content: center;
+    }
+</style>

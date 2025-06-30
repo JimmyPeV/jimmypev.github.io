@@ -1,0 +1,37 @@
+---
+import SocialLink from "./SocialLink.astro";
+
+import ArtStation from "../assets/svg/artstation.svg";
+import ItchIO from "../assets/svg/itchio.svg";
+import X from "../assets/svg/x.svg";
+import LinkedIn from "../assets/svg/linkedin.svg";
+---
+
+<footer class="relative w-full flex flex-col gap-2 justify-center items-start pl-4 pt-1 bg-headerfooter-bg text-headerfooter-text-secondary">
+    <div class="grid grid-cols-2 grid-rows-2 gap-4 items-start justify-center my-3">
+        <SocialLink
+            href="https://www.artstation.com/jimmypv135"
+            label="ArtStation"
+            icon={ArtStation}
+        />
+        <SocialLink
+            href="https://jimmypv.itch.io/"
+            label="Itch.io"
+            icon={ItchIO}
+        />
+        <SocialLink
+            href="https://x.com/JaimePeUve"
+            label="Twitter"
+            icon={X}
+        />
+        <SocialLink
+            href="https://www.linkedin.com/in/jaime-p%C3%A9rez-villena/"
+            label="LinkedIn"
+            icon={LinkedIn}
+        />
+    </div>
+
+    <div class="footer-content items-center text-center mb-2">
+        <p>© 2025 JimmyPV. All rights reserved.</p>
+    </div>
+</footer>
