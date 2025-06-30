@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import { getCollection, render } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
-import ArtStation from "../../assets/svg/artstation.svg";
+import Layout from '../../../layouts/Layout.astro';
+import ArtStation from "../../../assets/svg/artstation.svg";
 
 export async function getStaticPaths() {
     const arts = await getCollection("arts");
