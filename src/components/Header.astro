@@ -29,20 +29,3 @@ import FavIcon from "../assets/svg/favIcon.svg";
         </div>
     </nav>
 </header>
-
-<script type="module">
-
-    function toggleMenu() {
-        const navMenu = document.getElementById('nav-menu')
-        navMenu.classList.toggle('hidden')
-
-        const menuButton = document.getElementById('menu-btn')
-        menuButton.classList.toggle('hidden')
-    }
-
-    const menuButton = document.getElementById('menu-btn')
-    const closeMenuButton = document.getElementById('close-menu-btn')
-
-    menuButton.addEventListener('click', toggleMenu)
-    closeMenuButton.addEventListener('click', toggleMenu)
-</script>
