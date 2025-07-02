@@ -9,10 +9,40 @@ import FavIcon from "../assets/svg/favIcon.svg";
                 <FavIcon />
             </a>
         </div>
-        <div class="flex flex-row gap-4 justify-end transition">
-            <a href="/my-work" class="inline-block transition 200ms hover:text-headerfooter-text">My Work</a>
-            <a href="/about-me" class="inline-block transition 200ms hover:text-headerfooter-text">About Me</a>
-            <a href="/contact" class="inline-block transition 200ms hover:text-headerfooter-text">Contact</a>
+
+        <div class="justify-end transition md:hidden">
+            <button id="menu-btn" class="hover:text-headerfooter-text">
+                Menu
+            </button>
+        </div>
+
+        <div id="nav-menu" class="flex md:flex flex-row gap-4 items-center justify-end transition hidden">
+            <button
+                id="close-menu-btn"
+                class="inline-block md:hidden mr-4 rounded-xl bg-headerfooter-text-secondary text-headerfooter-bg p-0.5 font-semibold"
+            >
+                X
+            </button>
+            <a href="/my-work" class="inline-block transition duration-200 hover:text-headerfooter-text">My Work</a>
+            <a href="/about-me" class="inline-block transition duration-200 hover:text-headerfooter-text">About Me</a>
+            <a href="/contact" class="inline-block transition duration-200 hover:text-headerfooter-text">Contact</a>
         </div>
     </nav>
 </header>
+
+<script type="module">
+
+    function toggleMenu() {
+        const navMenu = document.getElementById('nav-menu')
+        navMenu.classList.toggle('hidden')
+
+        const menuButton = document.getElementById('menu-btn')
+        menuButton.classList.toggle('hidden')
+    }
+
+    const menuButton = document.getElementById('menu-btn')
+    const closeMenuButton = document.getElementById('close-menu-btn')
+
+    menuButton.addEventListener('click', toggleMenu)
+    closeMenuButton.addEventListener('click', toggleMenu)
+</script>
