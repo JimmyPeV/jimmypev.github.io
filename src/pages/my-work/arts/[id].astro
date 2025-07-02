@@ -21,12 +21,12 @@ const { Content } = await render(art)
 ---
 
 <Layout title={`${title} - JimmyPV Art`} mainClass="content-center">
-    <div class="flex h-full gap-12 justify-center mt-5 mb-3">
+    <div class="flex flex-col md:flex-row h-full gap-12 justify-center m-5">
         <aside class="flex flex-col gap-2">
             <Image
                 loading={"eager"}
                 transition:name={`img-${slug}`}
-                class="mb-3 w-96 rounded"
+                class="mb-3 w-96 rounded self-center"
                 src={img}
                 alt={title}
             />
