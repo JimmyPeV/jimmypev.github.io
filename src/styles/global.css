@@ -9,11 +9,19 @@
     --color-xanthous: #FCBF49;
     --color-vanilla: #EAE2B7;
 
+    --color-deep-cove: #06113C;
+    --color-torea-bay: ##0E2991;
+    --color-persian-blue: ##1741E6;
+    --color-neon-carrot: #FF8C32;
+    --color-alto: #DDDDDD;
+    --color-gallery: #EEEEEE;
+
+    /*
     --color-skin: var(--color-xanthous);
 
     --color-background: var(--color-vanilla);
     /* --color-background: #dcdad5; */
-    
+    /*
     --color-text-primary: var(--color-prussian-blue);
     --color-text-secondary: var(--color-indigo-dye);
     --color-text-tertiary: var(--color-honolulu-blue);
@@ -21,4 +29,18 @@
     --color-headerfooter-bg: var(--color-prussian-blue);
     --color-headerfooter-text: var(--color-xanthous);
     --color-headerfooter-text-secondary: var(--color-vanilla);
+    */
+
+    --color-skin: var(--color-neon-carrot);
+
+    --color-background: var(--color-alto);
+    /* --color-background: #dcdad5; */
+    
+    --color-text-primary: var(--color-deep-cove);
+    --color-text-secondary: var(--color-torea-bay);
+    --color-text-tertiary: var(--color-persian-blue);
+
+    --color-headerfooter-bg: var(--color-deep-cove);
+    --color-headerfooter-text: var(--color-neon-carrot);
+    --color-headerfooter-text-secondary: var(--color-alto);
 }
