@@ -5,4 +5,4 @@ img: ../../assets/arts/bronze-figurine.webp
 artstation: https://www.artstation.com/jimmypv135
 ---
 
-TO DO
+Bronze render of a logo for the company MACOVALMAR.

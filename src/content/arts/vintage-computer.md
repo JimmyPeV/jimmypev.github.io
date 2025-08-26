@@ -5,4 +5,4 @@ img: ../../assets/arts/vintage-computer.webp
 artstation: https://www.artstation.com/jimmypv135
 ---
 
-TO DO
+A vintage computer, made with Blender, Substance 3D Painter.
